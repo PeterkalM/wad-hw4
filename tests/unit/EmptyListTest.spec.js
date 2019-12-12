@@ -13,7 +13,7 @@ describe('EmptyListTest', () => {
         const wrapper = mount(List,{propsData:{
             list: [{title:"Something",done:true}, {title:"Something else",done:false},{title:"Something else 2",done:false}]
             }});
-        expect(wrapper.props().list.length).toEqual(3);
+        expect(wrapper.findAll(".list-item").length).toEqual(3);
         expect(wrapper.html().indexOf("Add your first Todo task")).toEqual(-1) //I didn't find other ways of testing if html does not have a certain thing in it
     });
 });
